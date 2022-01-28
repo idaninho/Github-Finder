@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+const UserItem = ({ user: { login, id } }) => {
+  return <div className="card text-center">{id}</div>;
+};
 
-export class UserItem extends Component {
-  state = {
-    id: 'id',
-    login: 'mojombo',
-    avatar_url: '',
-    html_url: '',
-  };
+UserItem.prototypes = {
+  user: PropTypes.object.isRequired,
+};
 
-  render() {
-    const { login, avatar_url, html_url } = this.state;
-    return <div className="card text-center">UserItem</div>;
-  }
-}
 
 export default UserItem;
